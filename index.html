@@ -1,0 +1,2492 @@
+<html>
+	<head>
+		<title>Childhood</title>
+
+		<!--Scripts-->
+        <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css?family=Playfair+Display&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" rel="stylesheet">
+	   	<script src="d3.v4.js"></script>
+ 	</head>
+	<body >
+
+        <div></div>
+
+		<script>
+			var width = 3000; // width of the svg
+			var height_full = 735; // height of the svg
+            var height = height_full - 180;
+
+			var main_svg = d3.select("body").append('svg')
+				.attr("width", 1520)
+				.attr("height", height_full)
+                .attr("transform", "translate(0, 0)");
+            var total = 25;
+            var f = width/total;
+                
+            
+            var gi = main_svg.append("g")
+            .attr("transform", "translate(720, 0)")
+            //.attr("transform", "scale(0.5, 1)");
+            .attr('class', 'svg-container');
+            
+         
+            
+              var gt = main_svg.append("g")
+            .attr("transform", "translate(-70, -30)")
+            gt.append("rect")
+            
+            .attr("width", 4.4*f)
+            .attr("height", 200)
+             .attr("rx", 60)
+            .attr('fill',"white" );
+            var intro = main_svg.append("g")
+            .attr("transform", "translate(0, 0)")
+            
+            var text = "#7b798c";
+           
+            
+            var m1, m2, m3,  m4, m5, m6, m7, m8,  m9, m10, m11, m12, m13, m14, m15, m16, m17, m18, mt1, mt2, mt3, mt4, mt5, mt6, mt7, mt8, mt9, mt10, mt11, mt12, mt13, mt14, mt15, mt16, mt17, mt18;
+                    
+            var month = [];
+            
+         for( var i = 0; i <= total + 1; i++) //LINES
+                {
+                     for( var j = i*f; j < i*f+f; j=j+f/30)
+                {
+                    gi.append("line")
+                    .attr("x1", j)
+                    .attr("y1", 0)
+                    .attr("x2", j)
+                    .attr("y2", height)
+                    .attr("stroke-width", 2)
+                    .attr("stroke", "#fcfaf7");
+                }
+                     
+                    gi.append("line")
+                    .attr("x1", i*f)
+                    .attr("y1", 0)
+                    .attr("x2", i*f)
+                    .attr("y2", height)
+                    .attr("stroke-width", 2)
+                    .attr("stroke", "#e9e8ef");
+                }
+            
+            
+            
+            
+            mt1 = gt.append("g")
+            .style("opacity", 0);
+                 
+                  mt1.append("text")
+                     .attr("x", 100)
+                     .attr("y", 100)
+                     .text("Basic Motor: Lifts up head ")
+                     .attr("font-family", "'Playfair Display', serif")
+                     .attr("font-size", 30)
+                     .attr('fill', "#d5738b");
+                
+                  mt1.append("text")
+                     .attr("x", 100)
+                     .attr("y", 130)
+                     .text("Can hold their heads up unassisted. Begins to")
+                     .attr("font-family", "'Roboto', sans-serif")
+                     .attr("font-size", 12)
+                     .attr('fill', "#7b798c");
+                  mt1.append("text")
+                     .attr("x", 100)
+                     .attr("y", 145)
+                     .text("Begins to push up with their arms when lying on stomach.")
+                     .attr("font-family", "'Roboto', sans-serif")
+                     .attr("font-size", 12)
+                     .attr('fill', "#7b798c");
+                  mt1.append("text")
+                     .attr("x", 100)
+                     .attr("y", 160)
+                     .text("Makes smoother movements with arms and legs video icon")
+                     .attr("font-family", "'Roboto', sans-serif")
+                     .attr("font-size", 12)
+                     .attr('fill', "#7b798c");
+            
+            
+            
+            mt2 = gt.append("g")
+             .style("opacity", 0);    
+                  mt2.append("text")
+                     .attr("x", 100)
+                     .attr("y", 100)
+                     .text("Social: Smiles ")
+                     .attr("font-family", "'Playfair Display', serif")
+                     .attr("font-size", 30)
+                     .attr('fill', "#386076");
+                 
+                  mt2.append("text")
+                     .attr("x", 100)
+                     .attr("y", 130)
+                     .text("Begins to smile at people. Tries to look at parent")
+                     .attr("font-family", "'Roboto', sans-serif")
+                     .attr("font-size", 12)
+                     .attr('fill', "#7b798c");
+                  mt2.append("text")
+                     .attr("x", 100)
+                     .attr("y", 145)
+                     .text("Can briefly calm herself (may bring hands to mouth ")
+                     .attr("font-family", "'Roboto', sans-serif")
+                     .attr("font-size", 12)
+                     .attr('fill', "#7b798c");
+                  mt2.append("text")
+                     .attr("x", 100)
+                     .attr("y", 160)
+                     .text("and suck on hand). Pays attention to faces")
+                     .attr("font-family", "'Roboto', sans-serif")
+                     .attr("font-size", 12)
+                     .attr('fill', "#7b798c");
+            
+            
+              
+            mt3 = gt.append("g")
+             .style("opacity", 0);    
+                  mt3.append("text")
+                     .attr("x", 100)
+                     .attr("y", 100)
+                     .text("Cognitive: Orients to voice ")
+                     .attr("font-family", "'Playfair Display', serif")
+                     .attr("font-size", 30)
+                     .attr('fill', "#6da8a0");
+                 
+                  mt3.append("text")
+                     .attr("x", 100)
+                     .attr("y", 130)
+                     .text("Orients to voice. Lets you know if he is happy or sad")
+                     .attr("font-family", "'Roboto', sans-serif")
+                     .attr("font-size", 12)
+                     .attr('fill', "#7b798c");
+                  mt3.append("text")
+                     .attr("x", 100)
+                     .attr("y", 145)
+                     .text("Responds to affection. Follows moving things with ")
+                     .attr("font-family", "'Roboto', sans-serif")
+                     .attr("font-size", 12)
+                     .attr('fill', "#7b798c");
+                  mt3.append("text")
+                     .attr("x", 100)
+                     .attr("y", 160)
+                     .text(" eyes from side to side ")
+                     .attr("font-family", "'Roboto', sans-serif")
+                     .attr("font-size", 12)
+                     .attr('fill', "#7b798c");
+            
+            mt4 = gt.append("g")
+             .style("opacity", 0);    
+                  mt4.append("text")
+                     .attr("x", 100)
+                     .attr("y", 100)
+                     .text("Social: Stranger Anxiety")
+                     .attr("font-family", "'Playfair Display', serif")
+                     .attr("font-size", 30)
+                     .attr('fill', "#386076");
+                
+                  mt4.append("text")
+                     .attr("x", 100)
+                     .attr("y", 130)
+                     .text("Knows familiar faces and begins to know if someone  ")
+                     .attr("font-family", "'Roboto', sans-serif")
+                     .attr("font-size", 12)
+                     .attr('fill', "#7b798c");
+                  mt4.append("text")
+                     .attr("x", 100)
+                     .attr("y", 145)
+                     .text("is a stranger Likes to play with others, especially parents. ")
+                     .attr("font-family", "'Roboto', sans-serif")
+                     .attr("font-size", 12)
+                     .attr('fill', "#7b798c");
+                  mt4.append("text")
+                     .attr("x", 100)
+                     .attr("y", 160)
+                     .text(" Responds to other peoples emotions as well. ")
+                     .attr("font-family", "'Roboto', sans-serif")
+                     .attr("font-size", 12)
+                     .attr('fill', "#7b798c");
+            
+             mt5 = gt.append("g")
+             .style("opacity", 0);    
+                  mt5.append("text")
+                     .attr("x", 100)
+                     .attr("y", 100)
+                     .text("Basic Motor: Sits up")
+                     .attr("font-family", "'Playfair Display', serif")
+                     .attr("font-size", 30)
+            .attr('fill', "#d5738b");
+                 
+                  mt5.append("text")
+                     .attr("x", 100)
+                     .attr("y", 130)
+                     .text("Knows familiar faces and begins to know if someone  ")
+                     .attr("font-family", "'Roboto', sans-serif")
+                     .attr("font-size", 12)
+                     .attr('fill', "#7b798c");
+                  mt5.append("text")
+                     .attr("x", 100)
+                     .attr("y", 145)
+                     .text("is a stranger Likes to play with others, especially parents. ")
+                     .attr("font-family", "'Roboto', sans-serif")
+                     .attr("font-size", 12)
+                     .attr('fill', "#7b798c");
+                  mt5.append("text")
+                     .attr("x", 100)
+                     .attr("y", 160)
+                     .text(" Responds to other peoples emotions as well. ")
+                     .attr("font-family", "'Roboto', sans-serif")
+                     .attr("font-size", 12)
+                     .attr('fill', "#7b798c");
+             mt6 = gt.append("g")
+             .style("opacity", 0);    
+                  mt6.append("text")
+                     .attr("x", 100)
+                     .attr("y", 100)
+                     .text("Fine Motor: Picks up toys")
+                     .attr("font-family", "'Playfair Display', serif")
+                     .attr("font-size", 30)
+                     .attr('fill', "#ff86ad");
+                
+                  mt6.append("text")
+                     .attr("x", 100)
+                     .attr("y", 130)
+                     .text("Knows familiar faces and begins to know if someone  ")
+                     .attr("font-family", "'Roboto', sans-serif")
+                     .attr("font-size", 12)
+                     .attr('fill', "#7b798c");
+                  mt6.append("text")
+                     .attr("x", 100)
+                     .attr("y", 145)
+                     .text("is a stranger Likes to play with others, especially parents. ")
+                     .attr("font-family", "'Roboto', sans-serif")
+                     .attr("font-size", 12)
+                     .attr('fill', "#7b798c");
+                  mt6.append("text")
+                     .attr("x", 100)
+                     .attr("y", 160)
+                     .text(" Responds to other peoples emotions as well. ")
+                     .attr("font-family", "'Roboto', sans-serif")
+                     .attr("font-size", 12)
+                     .attr('fill', "#7b798c");
+            mt7 = gt.append("g")
+             .style("opacity", 0);    
+                  mt7.append("text")
+                     .attr("x", 100)
+                     .attr("y", 100)
+                     .text("Basic Motor: Crawls")
+                     .attr("font-family", "'Playfair Display', serif")
+                     .attr("font-size", 30)
+                     .attr('fill', "#D5738B");
+
+                  mt7.append("text")
+                     .attr("x", 100)
+                     .attr("y", 130)
+                     .text("Knows familiar faces and begins to know if someone  ")
+                     .attr("font-family", "'Roboto', sans-serif")
+                     .attr("font-size", 12)
+                     .attr('fill', "#7b798c");
+                  mt7.append("text")
+                     .attr("x", 100)
+                     .attr("y", 145)
+                     .text("is a stranger Likes to play with others, especially parents. ")
+                     .attr("font-family", "'Roboto', sans-serif")
+                     .attr("font-size", 12)
+                     .attr('fill', "#7b798c");
+                  mt7.append("text")
+                     .attr("x", 100)
+                     .attr("y", 160)
+                     .text(" Responds to other peoples emotions as well. ")
+                     .attr("font-family", "'Roboto', sans-serif")
+                     .attr("font-size", 12)
+                     .attr('fill', "#7b798c");
+            mt8 = gt.append("g")
+             .style("opacity", 0);    
+                  mt8.append("text")
+                     .attr("x", 100)
+                     .attr("y", 100)
+                     .text("Social: Separation anxiety")
+                     .attr("font-family", "'Playfair Display', serif")
+                     .attr("font-size", 30)
+                     .attr('fill', "#386076");
+                 
+                  mt8.append("text")
+                     .attr("x", 100)
+                     .attr("y", 130)
+                     .text("Knows familiar faces and begins to know if someone  ")
+                     .attr("font-family", "'Roboto', sans-serif")
+                     .attr("font-size", 12)
+                     .attr('fill', "#7b798c");
+                  mt8.append("text")
+                     .attr("x", 100)
+                     .attr("y", 145)
+                     .text("is a stranger Likes to play with others, especially parents. ")
+                     .attr("font-family", "'Roboto', sans-serif")
+                     .attr("font-size", 12)
+                     .attr('fill', "#7b798c");
+                  mt8.append("text")
+                     .attr("x", 100)
+                     .attr("y", 160)
+                     .text(" Responds to other peoples emotions as well. ")
+                     .attr("font-family", "'Roboto', sans-serif")
+                     .attr("font-size", 12)
+                     .attr('fill', "#7b798c");
+            mt9 = gt.append("g")
+             .style("opacity", 0);    
+                  mt9.append("text")
+                     .attr("x", 100)
+                     .attr("y", 100)
+                     .text("Cognitive: Orients to name ")
+                     .attr("font-family", "'Playfair Display', serif")
+                     .attr("font-size", 30)
+                     .attr('fill', "#6DA8A0");
+                 
+                  mt9.append("text")
+                     .attr("x", 100)
+                     .attr("y", 130)
+                     .text("Knows familiar faces and begins to know if someone  ")
+                     .attr("font-family", "'Roboto', sans-serif")
+                     .attr("font-size", 12)
+                     .attr('fill', "#7b798c");
+                  mt9.append("text")
+                     .attr("x", 100)
+                     .attr("y", 145)
+                     .text("is a stranger Likes to play with others, especially parents. ")
+                     .attr("font-family", "'Roboto', sans-serif")
+                     .attr("font-size", 12)
+                     .attr('fill', "#7b798c");
+                  mt9.append("text")
+                     .attr("x", 100)
+                     .attr("y", 160)
+                     .text(" Responds to other peoples emotions as well. ")
+                     .attr("font-family", "'Roboto', sans-serif")
+                     .attr("font-size", 12)
+                     .attr('fill', "#7b798c");
+            mt10 = gt.append("g")
+             .style("opacity", 0);    
+                  mt10.append("text")
+                     .attr("x", 100)
+                     .attr("y", 100)
+                     .text("Cognitive: Object permanance")
+                     .attr("font-family", "'Playfair Display', serif")
+                     .attr("font-size", 30)
+                     .attr('fill', "#6DA8A0");
+                
+                  mt10.append("text")
+                     .attr("x", 100)
+                     .attr("y", 130)
+                     .text("Knows familiar faces and begins to know if someone  ")
+                     .attr("font-family", "'Roboto', sans-serif")
+                     .attr("font-size", 12)
+                     .attr('fill', "#7b798c");
+                  mt10.append("text")
+                     .attr("x", 100)
+                     .attr("y", 145)
+                     .text("is a stranger Likes to play with others, especially parents. ")
+                     .attr("font-family", "'Roboto', sans-serif")
+                     .attr("font-size", 12)
+                     .attr('fill', "#7b798c");
+                  mt10.append("text")
+                     .attr("x", 100)
+                     .attr("y", 160)
+                     .text(" Responds to other peoples emotions as well. ")
+                     .attr("font-family", "'Roboto', sans-serif")
+                     .attr("font-size", 12)
+                     .attr('fill', "#7b798c");
+            mt11 = gt.append("g")
+             .style("opacity", 0);    
+                  mt11.append("text")
+                     .attr("x", 100)
+                     .attr("y", 100)
+                     .text("Basic Motor: Stands")
+                     .attr("font-family", "'Playfair Display', serif")
+                     .attr("font-size", 30)
+                     .attr('fill', "#D5738B");
+               
+                  mt11.append("text")
+                     .attr("x", 100)
+                     .attr("y", 130)
+                     .text("Knows familiar faces and begins to know if someone  ")
+                     .attr("font-family", "'Roboto', sans-serif")
+                     .attr("font-size", 12)
+                     .attr('fill', "#7b798c");
+                  mt11.append("text")
+                     .attr("x", 100)
+                     .attr("y", 145)
+                     .text("is a stranger Likes to play with others, especially parents. ")
+                     .attr("font-family", "'Roboto', sans-serif")
+                     .attr("font-size", 12)
+                     .attr('fill', "#7b798c");
+                  mt11.append("text")
+                     .attr("x", 100)
+                     .attr("y", 160)
+                     .text(" Responds to other peoples emotions as well. ")
+                     .attr("font-family", "'Roboto', sans-serif")
+                     .attr("font-size", 12)
+                     .attr('fill', "#7b798c");
+            mt12 = gt.append("g")
+             .style("opacity", 0);    
+                  mt12.append("text")
+                     .attr("x", 100)
+                     .attr("y", 100)
+                     .text("Fine Motor: Pincer grasp")
+                     .attr("font-family", "'Playfair Display', serif")
+                     .attr("font-size", 30)
+                     .attr('fill', "#ff86ad");
+                
+                  mt12.append("text")
+                     .attr("x", 100)
+                     .attr("y", 130)
+                     .text("Knows familiar faces and begins to know if someone  ")
+                     .attr("font-family", "'Roboto', sans-serif")
+                     .attr("font-size", 12)
+                     .attr('fill', "#7b798c");
+                  mt12.append("text")
+                     .attr("x", 100)
+                     .attr("y", 145)
+                     .text("is a stranger Likes to play with others, especially parents. ")
+                     .attr("font-family", "'Roboto', sans-serif")
+                     .attr("font-size", 12)
+                     .attr('fill', "#7b798c");
+                  mt12.append("text")
+                     .attr("x", 100)
+                     .attr("y", 160)
+                     .text(" Responds to other peoples emotions as well. ")
+                     .attr("font-family", "'Roboto', sans-serif")
+                     .attr("font-size", 12)
+                     .attr('fill', "#7b798c");
+            mt13 = gt.append("g")
+             .style("opacity", 0);    
+                  mt13.append("text")
+                     .attr("x", 100)
+                     .attr("y", 100)
+                     .text("Language: Calls parents")
+                     .attr("font-family", "'Playfair Display', serif")
+                     .attr("font-size", 30)
+                     .attr('fill', "#49867E");
+                
+                  mt13.append("text")
+                     .attr("x", 100)
+                     .attr("y", 130)
+                     .text("Knows familiar faces and begins to know if someone  ")
+                     .attr("font-family", "'Roboto', sans-serif")
+                     .attr("font-size", 12)
+                     .attr('fill', "#7b798c");
+                  mt13.append("text")
+                     .attr("x", 100)
+                     .attr("y", 145)
+                     .text("is a stranger Likes to play with others, especially parents. ")
+                     .attr("font-family", "'Roboto', sans-serif")
+                     .attr("font-size", 12)
+                     .attr('fill', "#7b798c");
+                  mt13.append("text")
+                     .attr("x", 100)
+                     .attr("y", 160)
+                     .text(" Responds to other peoples emotions as well. ")
+                     .attr("font-family", "'Roboto', sans-serif")
+                     .attr("font-size", 12)
+                     .attr('fill', "#7b798c");
+            mt14 = gt.append("g")
+             .style("opacity", 0);    
+                  mt14.append("text")
+                     .attr("x", 100)
+                     .attr("y", 100)
+                     .text("Basic Motor: Walks")
+                     .attr("font-family", "'Playfair Display', serif")
+                     .attr("font-size", 30)
+                     .attr('fill', "#D5738B");
+                 
+                  mt14.append("text")
+                     .attr("x", 100)
+                     .attr("y", 130)
+                     .text("Knows familiar faces and begins to know if someone  ")
+                     .attr("font-family", "'Roboto', sans-serif")
+                     .attr("font-size", 12)
+                     .attr('fill', "#7b798c");
+                  mt14.append("text")
+                     .attr("x", 100)
+                     .attr("y", 145)
+                     .text("is a stranger Likes to play with others, especially parents. ")
+                     .attr("font-family", "'Roboto', sans-serif")
+                     .attr("font-size", 12)
+                     .attr('fill', "#7b798c");
+                  mt14.append("text")
+                     .attr("x", 100)
+                     .attr("y", 160)
+                     .text(" Responds to other peoples emotions as well. ")
+                     .attr("font-family", "'Roboto', sans-serif")
+                     .attr("font-size", 12)
+                     .attr('fill', "#7b798c");
+            mt15 = gt.append("g")
+             .style("opacity", 0);    
+                  mt15.append("text")
+                     .attr("x", 100)
+                     .attr("y", 100)
+                     .text("Fine Motor: Points to objects")
+                     .attr("font-family", "'Playfair Display', serif")
+                     .attr("font-size", 30)
+                     .attr('fill', "#ff86ad");
+                
+                  mt15.append("text")
+                     .attr("x", 100)
+                     .attr("y", 130)
+                     .text("Knows familiar faces and begins to know if someone  ")
+                     .attr("font-family", "'Roboto', sans-serif")
+                     .attr("font-size", 12)
+                     .attr('fill', "#7b798c");
+                  mt15.append("text")
+                     .attr("x", 100)
+                     .attr("y", 145)
+                     .text("is a stranger Likes to play with others, especially parents. ")
+                     .attr("font-family", "'Roboto', sans-serif")
+                     .attr("font-size", 12)
+                     .attr('fill', "#7b798c");
+                  mt15.append("text")
+                     .attr("x", 100)
+                     .attr("y", 160)
+                     .text(" Responds to other peoples emotions as well. ")
+                     .attr("font-family", "'Roboto', sans-serif")
+                     .attr("font-size", 12)
+                     .attr('fill', "#7b798c");
+            mt16 = gt.append("g")
+             .style("opacity", 0);    
+                  mt16.append("text")
+                     .attr("x", 100)
+                     .attr("y", 100)
+                     .text("Fine Motor: Stacks 3 blocks")
+                     .attr("font-family", "'Playfair Display', serif")
+                     .attr("font-size", 30)
+                     .attr('fill', "#ff86ad");
+                 
+                  mt16.append("text")
+                     .attr("x", 100)
+                     .attr("y", 130)
+                     .text("Knows familiar faces and begins to know if someone  ")
+                     .attr("font-family", "'Roboto', sans-serif")
+                     .attr("font-size", 12)
+                     .attr('fill', "#7b798c");
+                  mt16.append("text")
+                     .attr("x", 100)
+                     .attr("y", 145)
+                     .text("is a stranger Likes to play with others, especially parents. ")
+                     .attr("font-family", "'Roboto', sans-serif")
+                     .attr("font-size", 12)
+                     .attr('fill', "#7b798c");
+                  mt16.append("text")
+                     .attr("x", 100)
+                     .attr("y", 160)
+                     .text(" Responds to other peoples emotions as well. ")
+                     .attr("font-family", "'Roboto', sans-serif")
+                     .attr("font-size", 12)
+                     .attr('fill', "#7b798c");
+            mt17 = gt.append("g")
+             .style("opacity", 0);    
+                  mt17.append("text")
+                     .attr("x", 100)
+                     .attr("y", 100)
+                     .text("Basic Motor: Climbs")
+                     .attr("font-family", "'Playfair Display', serif")
+                     .attr("font-size", 30)
+                     .attr('fill', "#D5738B");
+                
+                  mt17.append("text")
+                     .attr("x", 100)
+                     .attr("y", 130)
+                     .text("Knows familiar faces and begins to know if someone  ")
+                     .attr("font-family", "'Roboto', sans-serif")
+                     .attr("font-size", 12)
+                     .attr('fill', "#7b798c");
+                  mt17.append("text")
+                     .attr("x", 100)
+                     .attr("y", 145)
+                     .text("is a stranger Likes to play with others, especially parents. ")
+                     .attr("font-family", "'Roboto', sans-serif")
+                     .attr("font-size", 12)
+                     .attr('fill', "#7b798c");
+                  mt17.append("text")
+                     .attr("x", 100)
+                     .attr("y", 160)
+                     .text(" Responds to other peoples emotions as well. ")
+                     .attr("font-family", "'Roboto', sans-serif")
+                     .attr("font-size", 12)
+                     .attr('fill', "#7b798c");
+            
+       
+         
+           
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            //BABY ILLUSTRATIONS
+            
+ 
+              var url = 'baby1.svg', baby_svg, baby_1, baby_2, baby_3, baby_4;  
+            
+            
+               d3.xml(url, function(error, documentFragment) {
+        if (error) {console.log(error); return;}
+    
+        var svgNode = documentFragment
+                    .getElementsByTagName("g")[0];
+    
+         gi.node().appendChild(svgNode);
+
+         baby_1 = gi.select("#baby1");
+     //baby.attr("transform", "transform(100, 400)");
+     baby_1.attr("transform", "scale(0.71)")
+              .style("opacity", 100);
+            
+    });
+            
+  /* d3.xml("baby2.svg", function(error, documentFragment) {
+        if (error) {console.log(error); return;}
+    
+        var svgNode = documentFragment
+                    .getElementsByTagName("g")[0];
+    
+         gi.node().appendChild(svgNode);
+
+         baby_2 = gi.select("#baby2");
+     //baby.attr("transform", "transform(100, 400)");
+     baby_2.attr("transform", "scale(0.71)")
+                  .style("opacity", 0);
+  });
+       
+            d3.xml("baby3.svg", function(error, documentFragment) {
+        if (error) {console.log(error); return;}
+    
+        var svgNode = documentFragment
+                    .getElementsByTagName("g")[0];
+    
+         gi.node().appendChild(svgNode);
+
+         baby_3 = gi.select("#baby3");
+     //baby.attr("transform", "transform(100, 400)");
+     baby_3.attr("transform", "scale(0.71)")
+                  .style("opacity", 0);
+  });
+             d3.xml("baby2.svg", function(error, documentFragment) {
+        if (error) {console.log(error); return;}
+    
+        var svgNode = documentFragment
+                    .getElementsByTagName("g")[0];
+    
+         gi.node().appendChild(svgNode);
+
+         baby_2 = gi.select("#baby2");
+     //baby.attr("transform", "transform(100, 400)");
+     baby_2.attr("transform", "scale(0.71)")
+                  .style("opacity", 0);
+  });
+       
+            d3.xml("baby4.svg", function(error, documentFragment) {
+        if (error) {console.log(error); return;}
+    
+        var svgNode = documentFragment
+                    .getElementsByTagName("g")[0];
+    
+         gi.node().appendChild(svgNode);
+
+         baby_4 = gi.select("#baby4");
+     //baby.attr("transform", "transform(100, 400)");
+     baby_4.attr("transform", "scale(0.71)")
+                  .style("opacity", 80);
+  });
+       
+          
+            
+            
+            
+            */
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            //BARS AND MILESTONES
+            
+             
+    
+            
+             m17 = gi.append("g")
+                .attr("transform", "translate(0, 0)");
+            
+                m17.append("rect")
+                .attr("x", 18 * f)
+                .attr('y', height - 17 * 30)
+                .attr("width", width - 18 * f)
+                .attr("height", 60)
+                .attr("rx", 30)
+				.attr('fill', "#d5738b")
+                .attr("stroke", "#d5738b")
+                .attr("stroke-width", 5);
+                
+                m17.append("text")
+                 .attr("x", 18*f + 20)
+                 .attr('y', height - (16*30 + 10))
+                 .text("G6")
+                 .attr("font-family", "sans-serif")
+                 .attr("font-size", 15)
+                 .attr('fill', "white");
+            
+              var mh17 = m17.append("rect")
+                .style("opacity", 0)
+                .attr("x", 18*f+50)
+                .attr('y', height - 17*30)
+                .attr("width", width - f)
+                .attr("height", 60)
+                .attr("rx", 30)
+				.attr('fill', "#FAF6F6");
+            
+             var ml17 =   m17.append("text")
+                 .attr("x", 18*f + 70)
+                 .attr('y', height - (16*30 + 10))
+                 .text("Climbs stairs [18 month]")
+                 .attr("font-family", "sans-serif")
+                 .attr("font-size", 12)
+                 .attr('fill', "white");
+                
+                m17.on("mouseover", function(){ // hover events
+					console.log("mouseover");
+					gi.transition()
+					.duration(1000)
+					.attr("transform", "translate(" + -10*f + ", 0)");
+                       mt17.transition()
+                    .duration(1000)
+                    .style("opacity", 100);
+                      mh17.transition()
+                    .duration(500)
+                    .style("opacity", 100);
+                    ml17.transition()
+                    .duration(200)
+                    .attr('fill', "grey");
+				})
+                
+                m17.on("mouseout", function(){
+					console.log("mouseout");
+				
+                      mt17.transition()
+                    .duration(20)
+                    .style("opacity", 0);
+                     mh17.transition()
+                    .duration(500)
+                    .style("opacity", 0);
+                    ml17.transition()
+                    .duration(200)
+                    .attr('fill', "white");
+				})
+            
+             m16 = gi.append("g")
+                .attr("transform", "translate(0, 0)");
+            
+                m16.append("rect")
+                .attr("x", 12 * f)
+                .attr('y', height - 16 * 30)
+                .attr("width", width - 12 * f)
+                .attr("height", 60)
+                .attr("rx", 30)
+				.attr('fill', "#FF86AD")
+                .attr("stroke", "#FF86AD")
+                .attr("stroke-width", 5);
+                
+                m16.append("text")
+                 .attr("x", 12*f + 20)
+                 .attr('y', height - (15*30 + 10))
+                 .text("F4")
+                 .attr("font-family", "sans-serif")
+                 .attr("font-size", 15)
+                 .attr('fill', "white");
+            
+              var mh16 = m16.append("rect")
+                .style("opacity", 0)
+                .attr("x", 12*f+50)
+                .attr('y', height - 16*30)
+                .attr("width", width - f)
+                .attr("height", 60)
+                .attr("rx", 30)
+				.attr('fill', "#FAF6F6");
+            
+              var ml16 =  m16.append("text")
+                 .attr("x", 12*f + 70)
+                 .attr('y', height - (15*30 + 10))
+                 .text("Points to objects [12 month]")
+                 .attr("font-family", "sans-serif")
+                 .attr("font-size", 12)
+                 .attr('fill', "white");
+                
+                m16.on("mouseover", function(){ // hover events
+					console.log("mouseover");
+					gi.transition()
+					.duration(1000)
+					.attr("transform", "translate(" + -8*f + " , 0)");
+                       mt16.transition()
+                    .duration(1000)
+                    .style("opacity", 100);
+                      mh16.transition()
+                    .duration(500)
+                    .style("opacity", 100);
+                    ml16.transition()
+                    .duration(200)
+                    .attr('fill', "grey");
+				})
+                
+                m16.on("mouseout", function(){
+					console.log("mouseout");
+					
+                      mt16.transition()
+                    .duration(20)
+                    .style("opacity", 0);
+                     mh16.transition()
+                    .duration(500)
+                    .style("opacity", 0);
+                    ml16.transition()
+                    .duration(200)
+                    .attr('fill', "white");
+				})
+            
+             m15 = gi.append("g")
+                .attr("transform", "translate(0, 0)");
+            
+                m15.append("rect")
+                .attr("x", 12 * f)
+                .attr('y', height - 15 * 30)
+                .attr("width", width - 12 * f)
+                .attr("height", 60)
+                .attr("rx", 30)
+				.attr('fill', "#FF86AD")
+                .attr("stroke", "#FF86AD")
+                .attr("stroke-width", 5);
+                
+                m15.append("text")
+                 .attr("x", 12*f + 20)
+                 .attr('y', height - (14*30 + 10))
+                 .text("F3")
+                 .attr("font-family", "sans-serif")
+                 .attr("font-size", 15)
+                 .attr('fill', "white");
+            
+              var mh15 = m15.append("rect")
+                .style("opacity", 0)
+                .attr("x", 12*f+50)
+                .attr('y', height - 15*30)
+                .attr("width", width - f)
+                .attr("height", 60)
+                .attr("rx", 30)
+				.attr('fill', "#FAF6F6");
+            
+               var ml15 = m15.append("text")
+                 .attr("x", 12*f + 70)
+                 .attr('y', height - (14*30 + 10))
+                 .text("Points to objects [12 month]")
+                 .attr("font-family", "sans-serif")
+                 .attr("font-size", 12)
+                 .attr('fill', "white");
+                
+                m15.on("mouseover", function(){ // hover events
+					console.log("mouseover");
+					gi.transition()
+					.duration(1000)
+					.attr("transform", "translate(" + -8*f + " , 0)");
+                       mt15.transition()
+                    .duration(1000)
+                    .style("opacity", 100);
+                      mh15.transition()
+                    .duration(500)
+                    .style("opacity", 100);
+                    ml15.transition()
+                    .duration(200)
+                    .attr('fill', "grey");
+				})
+                
+                m15.on("mouseout", function(){
+					console.log("mouseout");
+					
+                      mt15.transition()
+                    .duration(20)
+                    .style("opacity", 0);
+                     mh15.transition()
+                    .duration(500)
+                    .style("opacity", 0);
+                    ml15.transition()
+                    .duration(200)
+                    .attr('fill', "white");
+				})
+            
+             m14 = gi.append("g")
+                .attr("transform", "translate(0, 0)");
+            
+                m14.append("rect")
+                .attr("x", 12 * f)
+                .attr('y', height - 14 * 30)
+                .attr("width", width - 12 * f)
+                .attr("height", 60)
+                .attr("rx", 30)
+				.attr('fill', "#d5738b")
+                .attr("stroke", "#d5738b")
+                .attr("stroke-width", 5);
+                
+                m14.append("text")
+                 .attr("x", 12*f + 20)
+                 .attr('y', height - (13*30 + 10))
+                 .text("G5")
+                 .attr("font-family", "sans-serif")
+                 .attr("font-size", 15)
+                 .attr('fill', "white");
+            
+              var mh14 = m14.append("rect")
+                .style("opacity", 0)
+                .attr("x", 12*f+50)
+                .attr('y', height - 14*30)
+                .attr("width", width - f)
+                .attr("height", 60)
+                .attr("rx", 30)
+				.attr('fill', "#FAF6F6");
+            
+               var ml14 = m14.append("text")
+                 .attr("x", 12*f + 70)
+                 .attr('y', height - (13*30 + 10))
+                 .text("Walks [12 month]")
+                 .attr("font-family", "sans-serif")
+                 .attr("font-size", 12)
+                 .attr('fill', "white");
+                
+                m14.on("mouseover", function(){ // hover events
+					console.log("mouseover");
+					gi.transition()
+					.duration(1000)
+					.attr("transform", "translate(" + -8*f + " , 0)");
+                       mt14.transition()
+                    .duration(200)
+                    .style("opacity", 100);
+                      mh14.transition()
+                    .duration(500)
+                    .style("opacity", 100);
+                    ml14.transition()
+                    .duration(200)
+                    .attr('fill', "grey");
+				})
+                
+                m14.on("mouseout", function(){
+					console.log("mouseout");
+				
+                      mt14.transition()
+                    .duration(20)
+                    .style("opacity", 0);
+                     mh14.transition()
+                    .duration(500)
+                    .style("opacity", 0);
+                    ml14.transition()
+                    .duration(200)
+                    .attr('fill', "white");
+				})
+            
+             m13 = gi.append("g")
+                .attr("transform", "translate(0, 0)");
+            
+                m13.append("rect")
+                .attr("x", 10 * f)
+                .attr('y', height - 13 * 30)
+                .attr("width", width - 10 * f)
+                .attr("height", 60)
+                .attr("rx", 30)
+				.attr('fill', "#49867E")
+                .attr("stroke", "#49867E")
+                .attr("stroke-width", 5);
+                
+                m13.append("text")
+                 .attr("x", 10*f + 20)
+                 .attr('y', height - (12*30 + 10))
+                 .text("L1")
+                 .attr("font-family", "sans-serif")
+                 .attr("font-size", 15)
+                 .attr('fill', "white");
+            
+              var mh13 = m13.append("rect")
+                .style("opacity", 0)
+                .attr("x", 10*f+50)
+                .attr('y', height - 13*30)
+                .attr("width", width - f)
+                .attr("height", 60)
+                .attr("rx", 30)
+				.attr('fill', "#FAF6F6");
+            
+               var ml13 = m13.append("text")
+                 .attr("x", 10*f + 70)
+                 .attr('y', height - (12*30 + 10))
+                 .text("Calls parents [10 month]")
+                 .attr("font-family", "sans-serif")
+                 .attr("font-size", 12)
+                 .attr('fill', "white");
+                
+                m13.on("mouseover", function(){ // hover events
+					console.log("mouseover");
+					gi.transition()
+					.duration(1000)
+					.attr("transform", "translate(" + -6*f + " , 0)");
+                       mt13.transition()
+                    .duration(200)
+                    .style("opacity", 100);
+                      mh13.transition()
+                    .duration(500)
+                    .style("opacity", 100);
+                    ml13.transition()
+                    .duration(200)
+                    .attr('fill', "grey");
+				})
+                
+                m13.on("mouseout", function(){
+					console.log("mouseout");
+				
+                      mt13.transition()
+                    .duration(20)
+                    .style("opacity", 0);
+                     mh13.transition()
+                    .duration(500)
+                    .style("opacity", 0);
+                    ml13.transition()
+                    .duration(200)
+                    .attr('fill', "white");
+				})
+            
+             m12 = gi.append("g")
+                .attr("transform", "translate(0, 0)");
+            
+                m12.append("rect")
+                .attr("x", 10 * f)
+                .attr('y', height - 12 * 30)
+                .attr("width", width - 10 * f)
+                .attr("height", 60)
+                .attr("rx", 30)
+				.attr('fill', "#FF86AD")
+                .attr("stroke", "#FF86AD")
+                .attr("stroke-width", 5);
+                
+                m12.append("text")
+                 .attr("x", 10*f + 20)
+                 .attr('y', height - (11*30 + 10))
+                 .text("F2")
+                 .attr("font-family", "sans-serif")
+                 .attr("font-size", 15)
+                 .attr('fill', "white");
+            
+              var mh12 = m12.append("rect")
+                .style("opacity", 0)
+                .attr("x", 10*f+50)
+                .attr('y', height - 12*30)
+                .attr("width", width - f)
+                .attr("height", 60)
+                .attr("rx", 30)
+				.attr('fill', "#FAF6F6");
+            
+               var ml12 = m12.append("text")
+                 .attr("x", 10*f + 70)
+                 .attr('y', height - (11*30 + 10))
+                 .text("Pincer Grasp [10 month]")
+                 .attr("font-family", "sans-serif")
+                 .attr("font-size", 12)
+                 .attr('fill', "white");
+                
+                m12.on("mouseover", function(){ // hover events
+					console.log("mouseover");
+					gi.transition()
+					.duration(1000)
+					.attr("transform", "translate(" + -6*f + " , 0)");
+                       mt12.transition()
+                    .duration(200)
+                    .style("opacity", 100);
+                      mh12.transition()
+                    .duration(500)
+                    .style("opacity", 100);
+                    ml12.transition()
+                    .duration(200)
+                    .attr('fill', "grey");
+				})
+                
+                m12.on("mouseout", function(){
+					console.log("mouseout");
+					
+                      mt12.transition()
+                    .duration(20)
+                    .style("opacity", 0);
+                     mh12.transition()
+                    .duration(500)
+                    .style("opacity", 0);
+                    ml12.transition()
+                    .duration(200)
+                    .attr('fill', "white");
+				})
+            
+             m11 = gi.append("g")
+                .attr("transform", "translate(0, 0)");
+            
+                m11.append("rect")
+                .attr("x", 10 * f)
+                .attr('y', height - 11 * 30)
+                .attr("width", width - 10 * f)
+                .attr("height", 60)
+                .attr("rx", 30)
+				.attr('fill', "#d5738b")
+                .attr("stroke", "#d5738b")
+                .attr("stroke-width", 5);
+                
+                m11.append("text")
+                 .attr("x", 10*f + 20)
+                 .attr('y', height - (10*30 + 10))
+                 .text("G4")
+                 .attr("font-family", "sans-serif")
+                 .attr("font-size", 15)
+                 .attr('fill', "white");
+            
+              var mh11 = m11.append("rect")
+                .style("opacity", 0)
+                .attr("x", 10*f+50)
+                .attr('y', height - 11*30)
+                .attr("width", width - f)
+                .attr("height", 60)
+                .attr("rx", 30)
+				.attr('fill', "#FAF6F6");
+            
+              var ml11 =  m11.append("text")
+                 .attr("x", 10*f + 70)
+                 .attr('y', height - (10*30 + 10))
+                 .text("Stands [10 month]")
+                 .attr("font-family", "sans-serif")
+                 .attr("font-size", 12)
+                 .attr('fill', "white");
+                
+                m11.on("mouseover", function(){ // hover events
+					console.log("mouseover");
+					gi.transition()
+					.duration(1000)
+					.attr("transform", "translate(" + -6*f + " , 0)");
+                       mt11.transition()
+                    .duration(200)
+                    .style("opacity", 100);
+                      mh11.transition()
+                    .duration(500)
+                    .style("opacity", 100);
+                    ml11.transition()
+                    .duration(200)
+                    .attr('fill', "grey");
+				})
+                
+                m11.on("mouseout", function(){
+					console.log("mouseout");
+				
+                      mt11.transition()
+                    .duration(20)
+                    .style("opacity", 0);
+                     mh11.transition()
+                    .duration(500)
+                    .style("opacity", 0);
+                    ml11.transition()
+                    .duration(200)
+                    .attr('fill', "white");
+				})
+            
+             m10 = gi.append("g")
+                .attr("transform", "translate(0, 0)");
+            
+                m10.append("rect")
+                .attr("x", 9 * f)
+                .attr('y', height - 10 * 30)
+                .attr("width", width - 9 * f)
+                .attr("height", 60)
+                .attr("rx", 30)
+				.attr('fill', "#6DA8A0")
+                .attr("stroke", "#6DA8A0")
+                .attr("stroke-width", 5);
+                
+                m10.append("text")
+                 .attr("x", 9*f + 20)
+                 .attr('y', height - (9*30 + 10))
+                 .text("O3")
+                 .attr("font-family", "sans-serif")
+                 .attr("font-size", 15)
+                 .attr('fill', "white");
+            
+              var mh10 = m10.append("rect")
+                .style("opacity", 0)
+                .attr("x", 9*f+50)
+                .attr('y', height - 10*30)
+                .attr("width", width - f)
+                .attr("height", 60)
+                .attr("rx", 30)
+				.attr('fill', "#FAF6F6");
+            
+               var ml10 = m10.append("text")
+                 .attr("x", 9*f + 70)
+                 .attr('y', height - (9*30 + 10))
+                 .text("Object permanance [9 month]")
+                 .attr("font-family", "sans-serif")
+                 .attr("font-size", 12)
+                 .attr('fill', "white");
+                
+                m10.on("mouseover", function(){ // hover events
+					console.log("mouseover");
+					gi.transition()
+					.duration(1000)
+					.attr("transform", "translate(" + -4*f + " , 0)");
+                       mt10.transition()
+                    .duration(200)
+                    .style("opacity", 100);
+                      mh10.transition()
+                    .duration(500)
+                    .style("opacity", 100);
+                    ml10.transition()
+                    .duration(200)
+                    .attr('fill', "grey");
+				})
+                
+                m10.on("mouseout", function(){
+					console.log("mouseout");
+				
+                      mt10.transition()
+                    .duration(20)
+                    .style("opacity", 0);
+                     mh10.transition()
+                    .duration(500)
+                    .style("opacity", 0);
+                    ml10.transition()
+                    .duration(200)
+                    .attr('fill', "white");
+				})
+            
+             m9 = gi.append("g")
+                .attr("transform", "translate(0, 0)");
+            
+                m9.append("rect")
+                .attr("x", 9 * f)
+                .attr('y', height - 9 * 30)
+                .attr("width", width - 9 * f)
+                .attr("height", 60)
+                .attr("rx", 30)
+				.attr('fill', "#6DA8A0")
+                .attr("stroke", "#6DA8A0")
+                .attr("stroke-width", 5);
+                
+                m9.append("text")
+                 .attr("x", 9*f + 20)
+                 .attr('y', height - (8*30 + 10))
+                 .text("O2")
+                 .attr("font-family", "sans-serif")
+                 .attr("font-size", 15)
+                 .attr('fill', "white");
+            
+              var mh9 = m9.append("rect")
+                .style("opacity", 0)
+                .attr("x", 9*f+50)
+                .attr('y', height - 9*30)
+                .attr("width", width - f)
+                .attr("height", 60)
+                .attr("rx", 30)
+				.attr('fill', "#FAF6F6");
+            
+              var ml9 =  m9.append("text")
+                 .attr("x", 9*f + 70)
+                 .attr('y', height - (8*30 + 10))
+                 .text("Orients to name [9 month]")
+                 .attr("font-family", "sans-serif")
+                 .attr("font-size", 12)
+                 .attr('fill', "white");
+                
+                m9.on("mouseover", function(){ // hover events
+					console.log("mouseover");
+					gi.transition()
+					.duration(1000)
+					.attr("transform", "translate(" + -4*f + " , 0)");
+                       mt9.transition()
+                    .duration(200)
+                    .style("opacity", 100);
+                      mh9.transition()
+                    .duration(500)
+                    .style("opacity", 100);
+                    ml9.transition()
+                    .duration(200)
+                    .attr('fill', "grey");
+				})
+                
+                m9.on("mouseout", function(){
+					console.log("mouseout");
+				
+                      mt9.transition()
+                    .duration(20)
+                    .style("opacity", 0);
+                     mh9.transition()
+                    .duration(500)
+                    .style("opacity", 0);
+                    ml9.transition()
+                    .duration(200)
+                    .attr('fill', "white");
+				})
+            
+             m8 = gi.append("g")
+                .attr("transform", "translate(0, 0)");
+            
+                m8.append("rect")
+                .attr("x", 9 * f)
+                .attr('y', height - 8 * 30)
+                .attr("width", width - 9 * f)
+                .attr("height", 60)
+                .attr("rx", 30)
+				.attr('fill', "#386076")
+                .attr("stroke", "#386076")
+                .attr("stroke-width", 5);
+                
+            
+            
+                m8.append("text")
+                 .attr("x", 9*f + 20)
+                 .attr('y', height - (7*30 + 10))
+                 .text("S3")
+                 .attr("font-family", "sans-serif")
+                 .attr("font-size", 15)
+                 .attr('fill', "white");
+            
+              var mh8 = m8.append("rect")
+                .style("opacity", 0)
+                .attr("x", 9*f+50)
+                .attr('y', height - 8*30)
+                .attr("width", width - f)
+                .attr("height", 60)
+                .attr("rx", 30)
+				.attr('fill', "#FAF6F6");
+            
+              var ml8 = m8.append("text")
+                 .attr("x", 9*f + 70)
+                 .attr('y', height - (7*30 + 10))
+                 .text("Separation anxiety [9 month]")
+                 .attr("font-family", "sans-serif")
+                 .attr("font-size", 12)
+                 .attr('fill', "white");
+                
+                m8.on("mouseover", function(){ // hover events
+					console.log("mouseover");
+					gi.transition()
+					.duration(1000)
+					.attr("transform", "translate(" + -4*f + " , 0)");
+                       mt8.transition()
+                    .duration(200)
+                    .style("opacity", 100);
+                      mh8.transition()
+                    .duration(500)
+                    .style("opacity", 100);
+                    ml8.transition()
+                    .duration(200)
+                    .attr('fill', "grey");
+				})
+                
+                m8.on("mouseout", function(){
+					console.log("mouseout");
+					
+                      mt8.transition()
+                    .duration(20)
+                    .style("opacity", 0);
+                     mh8.transition()
+                    .duration(500)
+                    .style("opacity", 0);
+                    ml8.transition()
+                    .duration(200)
+                    .attr('fill', "white");
+				})
+            
+            
+            
+            
+            
+             
+             m7 = gi.append("g")
+                .attr("transform", "translate(0, 0)");
+            
+                m7.append("rect")
+                .attr("x", 8 * f)
+                .attr('y', height - 7 * 30)
+                .attr("width", width - 8 * f)
+                .attr("height", 60)
+                .attr("rx", 30)
+				.attr('fill', "#d5738b")
+                .attr("stroke", "#d5738b")
+                .attr("stroke-width", 5);
+            
+              var mh7 = m7.append("rect")
+                .style("opacity", 0)
+                .attr("x", 8*f+50)
+                .attr('y', height - 7*30)
+                .attr("width", width - f)
+                .attr("height", 60)
+                .attr("rx", 30)
+				.attr('fill', "#FAF6F6");
+                
+                m7.append("text")
+                 .attr("x", 8*f + 20)
+                 .attr('y', height - 190)
+                 .text("G3")
+                 .attr("font-family", "sans-serif")
+                 .attr("font-size", 15)
+                 .attr('fill', "white");
+            
+             
+            
+              var ml7 =  m7.append("text")
+                 .attr("x", 8*f + 70)
+                 .attr('y', height - 190)
+                 .text("Crawls [8 month]")
+                 .attr("font-family", "sans-serif")
+                 .attr("font-size", 12)
+                 .attr('fill', "white");
+                
+                m7.on("mouseover", function(){ // hover events
+					console.log("mouseover");
+					gi.transition()
+					.duration(1000)
+					.attr("transform", "translate(" + -3*f + " , 0)");
+                      mt7.transition()
+                    .duration(200)
+                    .style("opacity", 100);
+                      mh7.transition()
+                    .duration(500)
+                    .style("opacity", 100);
+                    ml7.transition()
+                    .duration(200)
+                    .attr('fill', "grey");
+				})
+                
+                m7.on("mouseout", function(){
+					console.log("mouseout");
+				
+                      mt7.transition()
+                    .duration(20)
+                    .style("opacity", 0);
+                      mh7.transition()
+                    .duration(500)
+                    .style("opacity", 0);
+                    ml7.transition()
+                    .duration(200)
+                    .attr('fill', "white");
+				})
+            
+            
+            
+            
+            
+            m6 = gi.append("g")
+                .attr("transform", "translate(0, 0)");
+            
+                m6.append("rect")
+                .attr("x", 6 * f)
+                .attr('y', height - 6 * 30)
+                .attr("width", width - 6 * f)
+                .attr("height", 60)
+                .attr("rx", 30)
+				.attr('fill', "#ff86ad")
+                .attr("stroke", "#ff86ad")
+                .attr("stroke-width", 5);
+                
+              var mh6 = m6.append("rect")
+                .style("opacity", 0)
+                .attr("x", 6*f+50)
+                .attr('y', height - 6*30)
+                .attr("width", width - f)
+                .attr("height", 60)
+                .attr("rx", 30)
+				.attr('fill', "#FAF6F6");
+            
+                m6.append("text")
+                 .attr("x", 6 * f + 20)
+                 .attr('y', height - 160)
+                 .text("F1")
+                 .attr("font-family", "sans-serif")
+                 .attr("font-size", 15)
+                 .attr('fill', "white");
+            
+             
+            
+             var ml6 = m6.append("text")
+                 .attr("x", 6 * f +70)
+                 .attr('y', height - 160)
+                 .text("Picks up toys [6 month]")
+                 .attr("font-family", "sans-serif")
+                 .attr("font-size", 12)
+                 .attr('fill', "white");
+                
+                m6.on("mouseover", function(){ // hover events
+					console.log("mouseover");
+					gi.transition()
+					.duration(1000)
+					.attr("transform", "translate(" + -1*f + " , 0)")
+                     mt6.transition()
+                    .duration(200)
+                    .style("opacity", 100);
+                      mh6.transition()
+                    .duration(500)
+                    .style("opacity", 100);
+                    ml6.transition()
+                    .duration(200)
+                    .attr('fill', "grey");
+				})
+                
+                m6.on("mouseout", function(){
+					console.log("mouseout");
+				
+                     mt6.transition()
+                    .duration(20)
+                    .style("opacity", 0);
+                      mh6.transition()
+                    .duration(500)
+                    .style("opacity", 0);
+                    ml6.transition()
+                    .duration(200)
+                    .attr('fill', "white");
+				})  
+            
+            
+            
+            
+            
+             m5 = gi.append("g")
+                .attr("transform", "translate(0, 0)");
+            
+                m5.append("rect")
+                .attr("x", 6 * f)
+                .attr('y', height - 5 * 30)
+                .attr("width", width - 6 * f)
+                .attr("height", 60)
+                .attr("rx", 30)
+				.attr('fill', "#d5738b")
+                .attr("stroke", "#d5738b")
+                .attr("stroke-width", 5);
+            
+              var mh5 = m5.append("rect")
+                .style("opacity", 0)
+                .attr("x", 6*f+50)
+                .attr('y', height - 5*30)
+                .attr("width", width - f)
+                .attr("height", 60)
+                .attr("rx", 30)
+				.attr('fill', "#FAF6F6");
+                
+                m5.append("text")
+                 .attr("x", 6*f + 20)
+                 .attr('y', height - 130)
+                 .text("G2")
+                 .attr("font-family", "sans-serif")
+                 .attr("font-size", 15)
+                 .attr('fill', "white");
+            
+             
+              var ml5 =  m5.append("text")
+                 .attr("x", 6*f + 70)
+                 .attr('y', height - 130)
+                 .text("Sits up [6 month]")
+                 .attr("font-family", "sans-serif")
+                 .attr("font-size", 12)
+                 .attr('fill', "white");
+                
+                m5.on("mouseover", function(){ // hover events
+					console.log("mouseover");
+					gi.transition()
+					.duration(1000)
+					.attr("transform", "translate(" + -1*f + " , 0)")
+                     mt5.transition()
+                    .duration(200)
+                    .style("opacity", 100);
+                      mh5.transition()
+                    .duration(500)
+                    .style("opacity", 100);
+                    ml5.transition()
+                    .duration(200)
+                    .attr('fill', "grey");
+				})
+                
+                m5.on("mouseout", function(){
+					console.log("mouseout");
+					
+                     mt5.transition()
+                    .duration(20)
+                    .style("opacity", 0);
+                      mh5.transition()
+                    .duration(500)
+                    .style("opacity", 0);
+                    ml5.transition()
+                    .duration(200)
+                    .attr('fill', "white");
+				})  
+            
+            
+            
+            
+            
+            
+            m4 = gi.append("g")
+                .attr("transform", "translate(0, 0)");
+            
+                m4.append("rect")
+                .attr("x", 6 * f)
+                .attr('y', height - 4 * 30)
+                .attr("width", width - 6 * f)
+                .attr("height", 60)
+                .attr("rx", 30)
+				.attr('fill', "#386076")
+                .attr("stroke", "#386076")
+                .attr("stroke-width", 5);
+                
+              var mh4 = m4.append("rect")
+                .style("opacity", 0)
+                .attr("x", 6*f+50)
+                .attr('y', height - 4*30)
+                .attr("width", width - f)
+                .attr("height", 60)
+                .attr("rx", 30)
+				.attr('fill', "#FAF6F6");
+            
+                m4.append("text")
+                 .attr("x", 6*f + 20)
+                 .attr('y', height - 100)
+                 .text("S2")
+                 .attr("font-family", "sans-serif")
+                 .attr("font-size", 15)
+                 .attr('fill', "white");
+            
+               
+            
+             var ml4 = m4.append("text")
+                 .attr("x", 6*f + 70)
+                 .attr('y', height - 100)
+                 .text("Stranger anxiety [6 month]")
+                 .attr("font-family", "sans-serif")
+                 .attr("font-size", 12)
+                 .attr('fill', "white");
+                
+                m4.on("mouseover", function(){ // hover events
+					console.log("mouseover");
+					gi.transition()
+					.duration(1000)
+					.attr("transform", "translate(" + -1*f + " , 0)")
+                     mt4.transition()
+                    .duration(200)
+                    .style("opacity", 100);
+                    
+                      mh4.transition()
+                    .duration(500)
+                    .style("opacity", 100);
+                    ml4.transition()
+                    .duration(200)
+                    .attr('fill', "grey");
+				})
+                
+                m4.on("mouseout", function(){
+					console.log("mouseout");
+					
+                    mt4.transition()
+                    .duration(20)
+                    .style("opacity", 0);  
+                      mh4.transition()
+                    .duration(500)
+                    .style("opacity", 0);
+                    ml4.transition()
+                    .duration(200)
+                    .attr('fill', "white");
+				})  
+            
+            
+            
+            
+              m3 = gi.append("g")
+                .attr("transform", "translate(0, 0)");
+            
+                m3.append("rect")
+                .attr("x", 4*f)
+                .attr('y', height - 3 * 30)
+                .attr("width", width - 4*f)
+                .attr("height", 60)
+                .attr("rx", 30)
+				.attr('fill', "#6da8a0")
+                .attr("stroke", "#6da8a0")
+                .attr("stroke-width", 5);
+            
+              var mh3 = m3.append("rect")
+                .style("opacity", 0)
+                .attr("x", 4*f+50)
+                .attr('y', height - 3*30)
+                .attr("width", width - f)
+                .attr("height", 60)
+                .attr("rx", 30)
+				.attr('fill', "#FAF6F6");
+                
+                m3.append("text")
+                 .attr("x", 4*f + 20)
+                 .attr('y', height - 70)
+                 .text("O1")
+                 .attr("font-family", "sans-serif")
+                 .attr("font-size", 15)
+                 .attr('fill', "white");
+            
+               
+              var ml3 =  m3.append("text")
+                 .attr("x", 4*f + 70)
+                 .attr('y', height - 70)
+                 .text("Orients to voice [4 month]")
+                 .attr("font-family", "sans-serif")
+                 .attr("font-size", 12)
+                 .attr('fill', "white");
+                
+                m3.on("mouseover", function(){ // hover events
+					console.log("mouseover");
+					gi.transition()
+					.duration(1000)
+					.attr("transform", "translate(" + -0*f + " , 0)")
+                     mt3.transition()
+                    .duration(200)
+                    .style("opacity", 100);
+                   
+                    
+                  mh3.transition()
+                    .duration(500)
+                    .style("opacity", 100);
+                    ml3.transition()
+                    .duration(200)
+                    .attr('fill', "grey");
+				})
+                
+                m3.on("mouseout", function(){
+					console.log("mouseout");
+				
+                     mt3.transition()
+                    .duration(20)
+                    .style("opacity", 0);
+                   
+                    mh3.transition()
+                    .duration(500)
+                    .style("opacity", 0);
+                    ml3.transition()
+                    .duration(200)
+                    .attr('fill', "white");
+				})
+            
+            
+            
+            
+            m2 = gi.append("g")
+                .attr("transform", "translate(0, 0)");
+            
+                m2.append("rect")
+                .attr("x", 2*f)
+                .attr('y', height - 60)
+                .attr("width", width - 2*f)
+                .attr("height", 60)
+                .attr("rx", 30)
+				.attr('fill', "#386076")
+                .attr("stroke", "#386076")
+                .attr("stroke-width", 5);
+            
+                var mh2 = m2.append("rect")
+                .style("opacity", 0)
+                .attr("x", 2*f+50)
+                .attr('y', height - 2*30)
+                .attr("width", width - f)
+                .attr("height", 60)
+                .attr("rx", 30)
+				.attr('fill', "#FAF6F6");
+            
+            
+            m2.append("text")
+                 .attr("x", 2*f + 20)
+                 .attr('y', height - 40)
+                 .text("S1")
+                 .attr("font-family", "sans-serif")
+                 .attr("font-size", 15)
+                 .attr('fill', "white");
+            
+              
+              
+                
+               var ml2 =   m2.append("text")
+                 .attr("x", 2*f + 70)
+                 .attr('y', height - 40)
+                 .text("Social smile [2 month]")
+                 .attr("font-family", "sans-serif")
+                 .attr("font-size", 12)
+                 .attr('fill', "white");
+                
+                m2.on("mouseover", function(){ // hover events
+					console.log("mouseover");
+					gi.transition()
+					.duration(1000)
+					.attr("transform", "translate(" + -0*f + " , 0)")
+                    mt2.transition()
+                    .duration(200)
+                    .style("opacity", 100);
+                   
+                    mh2.transition()
+                    .duration(500)
+                    .style("opacity", 100);
+                    ml2.transition()
+                    .duration(200)
+                    .attr('fill', "grey");
+                    
+				})
+                
+                m2.on("mouseout", function(){
+					console.log("mouseout");
+					
+                    mt2.transition()
+                    .duration(20)
+                    .style("opacity", 0);
+                    mh2.transition()
+                    .duration(500)
+                    .style("opacity", 0);
+                    ml2.transition()
+                    .duration(200)
+                    .attr('fill', "white");
+                  
+				})
+            
+            
+            
+            m1 = gi.append("g")
+                .attr("transform", "translate(0, 0)");
+            
+                m1.append("rect")
+                .attr("x", f)
+                .attr('y', height - 1*30)
+                .attr("width", width - f)
+                .attr("height", 60)
+                .attr("rx", 30)
+				.attr('fill', "#d5738b")
+                .attr("stroke", "#d5738b")
+                .attr("stroke-width", 5);
+          
+               
+                m1.append("text")
+                 .attr("x", f + 20)
+                 .attr('y', height - 10)
+                 .text("G1")
+                 .attr("font-family", "sans-serif")
+                 .attr("font-size", 15)
+                 .attr('fill', "white");
+            
+                m1.append("text")
+                 .attr("x", f + 70)
+                 .attr('y', height - 10)
+                 .text("Lifts up head [1 month]")
+                 .attr("font-family", "sans-serif")
+                 .attr("font-size", 12)
+                 .attr('fill', "white");
+            
+               var mh1 = m1.append("rect")
+                .style("opacity", 0)
+                .attr("x", 1*f+50)
+                .attr('y', height - 1*30)
+                .attr("width", width - f)
+                .attr("height", 60)
+                .attr("rx", 30)
+				.attr('fill', "#FAF6F6");
+             var ml1 =   m1.append("text")
+                 .attr("x", 1*f + 70)
+                 .attr('y', height - 10)
+                 .text("Lifts up head [1 month]")
+                 .attr("font-family", "sans-serif")
+                 .attr("font-size", 12)
+                 .attr('fill', "white");
+            
+             m1.on("mouseover", function(){ // hover events
+					console.log("mouseover");
+					gi.transition()
+					.duration(1000)
+					.attr("transform", "translate(0, 0)")
+                    mt1.transition()
+                    .duration(200)
+                    .style("opacity", 100);
+                     mh1.transition()
+                    .duration(500)
+                    .style("opacity", 100);
+                    ml1.transition()
+                    .duration(200)
+                    .attr('fill', "grey");
+                 intro.transition()
+					.duration(1000)
+					.attr("transform", "translate(-720, 0)")
+                 .style("opacity", 0);
+                
+                    
+				})
+                
+           
+            
+                m1.on("mouseout", function(){
+					console.log("mouseout");
+					
+				    mt1.transition()
+                       .duration(20)
+                       .style("opacity", 0);
+                      mh1.transition()
+                    .duration(500)
+                    .style("opacity", 0);
+                    ml1.transition()
+                    .duration(200)
+                    .attr('fill', "white");
+				})
+            
+                
+            
+              
+            
+            
+            
+            for( var i = 0; i <= total; i++)  //MONTHS
+                {
+                   var month = gi.append("rect")
+                    .attr("x", i*f)
+                    .attr("y", height)
+                    .attr("width", f)
+                    .attr("height", 35)
+                    .attr("fill", function()
+                         {
+                        if(i%2 == 0)
+                            {
+                                return"#fcfaf7";
+                            }
+                        return"#e9e8ef";
+                    });
+                    
+                    
+                    gi.append("text")
+                    .attr("x", i*f + 16)
+                    .attr("y", height+20)
+                    .text( + i + " months")
+                    .attr("font-family", "sans-serif")
+                    .attr("font-size", 15)
+                    .attr('fill', "#7b798c");
+                }
+       
+            
+              
+          var base = main_svg.append("rect")
+                    .attr("y", height+35)
+                    .attr("width", width)
+                    .attr("height", 300)
+                    .attr('fill', "#F4EDEA");
+            
+            main_svg.append("text")
+                    .attr("x", 390)
+                    .attr('y', height + 120)
+                    .text("Filters:")
+                   .attr("font-family", "sans-serif")
+                   .attr("font-size", 12)
+                   .attr('fill', "#99a8ca");
+            
+            
+          var gross = main_svg.append("rect")
+                    .attr("x", 510)
+                    .attr('y', height + 100)
+                    .attr("width", 25)
+                    .attr("height", 25)
+                    .attr("rx", 15)
+                    .attr('fill',"#d5738b");
+                     main_svg.append("text")
+                    .attr("x", 492)
+                    .attr('y', height + 150)
+                    .text("Gross Motor")
+                   .attr("font-family", "sans-serif")
+                   .attr("font-size", 12)
+                   .attr('fill', "grey")
+                
+            gross.on("click", function(){
+                
+                m1.transition()
+                .duration(500)
+               .attr("transform", "translate(0, 0)");
+                 m2.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 500)");
+                 m3.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 500)");
+                 m4.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 500)");
+                 m5.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 90)");
+                 m6.transition()
+                .duration(500)
+               .attr("transform", "translate(0, 500)");
+                 m7.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 120)");
+                 m8.transition()
+                .duration(500)
+               .attr("transform", "translate(0, 500)");
+                 m9.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 500)");
+                 m10.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 500)");
+                 m11.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 210)");
+                 m12.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 500)");
+                 m13.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 500)");
+                 m14.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 270)");
+                 m15.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 500)");
+                 m16.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 500)");
+                 m17.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 330)");
+            })
+            
+              var fine = main_svg.append("rect")
+                    .attr("x", 610)
+                    .attr('y', height + 100)
+                    .attr("width", 25)
+                    .attr("height", 25)
+                    .attr("rx", 15)
+                    .attr('fill',"#FF86AD");
+                     main_svg.append("text")
+                    .attr("x", 595)
+                    .attr('y', height + 150)
+                    .text("Fine Motor")
+                   .attr("font-family", "sans-serif")
+                   .attr("font-size", 12)
+                   .attr('fill', "grey");
+             fine.on("click", function(){
+                
+                m1.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 500)");
+                 m2.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 500)");
+                 m3.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 500)");
+                 m4.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 500)");
+                 m5.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 500)");
+                 m6.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 150)");
+                 m7.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 500)");
+                 m8.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 500)");
+                 m9.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 500)");
+                 m10.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 500)");
+                 m11.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 500)");
+                 m12.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 300)");
+                 m13.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 500)");
+                 m14.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 500)");
+                 m15.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 360)");
+                 m16.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 360)");
+                 m17.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 500)");
+            })
+            
+            
+              var cog = main_svg.append("rect")
+                    .attr("x", 710)
+                    .attr('y', height + 100)
+                    .attr("width", 25)
+                    .attr("height", 25)
+                    .attr("rx", 15)
+                    .attr('fill',"#6DA8A0");
+                     main_svg.append("text")
+                    .attr("x", 698)
+                    .attr('y', height + 150)
+                    .text("Cognitive")
+                   .attr("font-family", "sans-serif")
+                   .attr("font-size", 12)
+                   .attr('fill', "grey");
+             cog.on("click", function(){
+                
+               m1.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 500)");
+                 m2.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 500)");
+                 m3.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 60)");
+                 m4.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 500)");
+                 m5.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 500)");
+                 m6.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 500)");
+                 m7.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 500)");
+                 m8.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 500)");
+                 m9.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 210)");
+                 m10.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 210)");
+                 m11.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 500)");
+                 m12.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 500)");
+                 m13.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 500)");
+                 m14.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 500)");
+                 m15.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 500)");
+                 m16.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 500)");
+                 m17.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 500)");
+            })
+            
+            
+              var lang = main_svg.append("rect")
+                    .attr("x", 810)
+                    .attr('y', height + 100)
+                    .attr("width", 25)
+                    .attr("height", 25)
+                    .attr("rx", 15)
+                    .attr('fill',"#49867E");
+                     main_svg.append("text")
+                    .attr("x", 798)
+                    .attr('y', height + 150)
+                    .text("Language")
+                   .attr("font-family", "sans-serif")
+                   .attr("font-size", 12)
+                   .attr('fill', "grey");
+             lang.on("click", function(){
+                
+               m1.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 500)");
+                 m2.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 500)");
+                 m3.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 500)");
+                 m4.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 500)");
+                 m5.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 500)");
+                 m6.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 500)");
+                 m7.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 500)");
+                 m8.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 500)");
+                 m9.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 500)");
+                 m10.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 500)");
+                 m11.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 500)");
+                 m12.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 500)");
+                 m13.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 360)");
+                 m14.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 500)");
+                 m15.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 500)");
+                 m16.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 500)");
+                 m17.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 500)");
+            })
+            
+             var socio = main_svg.append("rect")
+                    .attr("x", 910)
+                    .attr('y', height + 100)
+                    .attr("width", 25)
+                    .attr("height", 25)
+                    .attr("rx", 15)
+                    .attr('fill',"#386076");
+                     main_svg.append("text")
+                    .attr("x", 907)
+                    .attr('y', height + 150)
+                    .text("Social")
+                   .attr("font-family", "sans-serif")
+                   .attr("font-size", 12)
+                   .attr('fill', "grey");
+             socio.on("click", function(){
+                
+                m1.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 500)");
+                 m2.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 30)");
+                 m3.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 500)");
+                 m4.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 60)");
+                 m5.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 500)");
+                 m6.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 500)");
+                 m7.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 500)");
+                 m8.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 150)");
+                 m9.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 500)");
+                 m10.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 500)");
+                 m11.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 500)");
+                 m12.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 500)");
+                 m13.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 500)");
+                 m14.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 500)");
+                 m15.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 500)");
+                 m16.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 500)");
+                 m17.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 500)");
+            })
+            
+            var all = main_svg.append("rect")
+                    .attr("x", 1010)
+                    .attr('y', height + 100)
+                    .attr("width", 25)
+                    .attr("height", 25)
+                    .attr("rx", 15)
+                    .attr('fill',"#5B5869");
+                     main_svg.append("text")
+                    .attr("x", 1017)
+                    .attr('y', height + 150)
+                    .text("All")
+                   .attr("font-family", "sans-serif")
+                   .attr("font-size", 12)
+                   .attr('fill', "grey");
+             all.on("click", function(){
+                
+                m1.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 0)");
+                 m2.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 0)");
+                 m3.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 0)");
+                 m4.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 0)");
+                 m5.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 0)");
+                 m6.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 0)");
+                 m7.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 0)");
+                 m8.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 0)");
+                 m9.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 0)");
+                 m10.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 0)");
+                 m11.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 0)");
+                 m12.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 0)");
+                 m13.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 0)");
+                 m14.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 0)");
+                 m15.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 0)");
+                 m16.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 0)");
+                 m17.transition()
+                .duration(500)
+                .attr("transform", "translate(0, 0)");
+            })
+        
+      
+             intro.append("text")
+                    .attr("x", 170)
+                    .attr('y', height - 10)
+                    .text(" Hover on the bars to know more and travel through the timeline ")
+                   .attr("font-family", "'Roboto', sans-serif")
+                   .attr("font-size", 14)
+                   .attr('fill', "#99a8ca");  
+             intro.append("text")
+                    .attr("x", 170)
+                    .attr('y', 100)
+                    .text(" The Stairs of Early")
+                   .attr("font-family", "'Playfair Display', serif")
+                   .attr("font-size", 30)
+                   .attr('fill', "#6DA8A0");
+         intro.append("text")
+                    .attr("x", 170)
+                    .attr('y', 150)
+                    .text("  Cildhood Development")
+                   .attr("font-family", "'Playfair Display', serif")
+                   .attr("font-size", 30)
+                   .attr('fill', "#6DA8A0"); 
+            intro.append("text")
+                    .attr("x", 170)
+                    .attr('y', 200)
+                    .text(" This visualisation illustrates the sensory motor phase of")
+                   .attr("font-family", "sans-serif")
+                   .attr("font-size", 14)
+                   .attr('fill', "#99a8ca"); 
+            intro.append("text")
+                    .attr("x", 170)
+                    .attr('y', 220)
+                    .text(" early childhood development marked by major physical and")
+                   .attr("font-family", "sans-serif")
+                   .attr("font-size", 14)
+                   .attr('fill', "#99a8ca"); 
+            intro.append("text")
+                    .attr("x", 170)
+                    .attr('y', 240)
+                    .text(" sensory milestones along with social development.")
+                   .attr("font-family", "sans-serif")
+                   .attr("font-size", 14)
+                   .attr('fill', "#99a8ca"); 
+            
+            intro.append("line")
+                     .attr("x1",170)
+                     .attr("y1", height-3)
+                     .attr("x2", f+720)
+                     .attr("y2", height-3)
+                  
+                     .attr("stroke", "#ff86ad");
+            intro.append("rect")
+                    .attr("x", f+715)
+                    .attr('y', height-8)
+                    .attr("width", 10)
+                    .attr("height", 10)
+                    .attr("rx", 15)
+                    .attr('fill',"#FF86AD");
+            
+            
+
+          
+		</script>
+        
+             
+	</body>
+</html>
